@@ -98,8 +98,8 @@ const Projects = () => {
                       data-testid={`project-github-${index}`}
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        GitHub
+                      
+                        Explore
                       </a>
                     </Button>
                   )}

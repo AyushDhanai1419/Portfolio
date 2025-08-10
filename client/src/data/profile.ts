@@ -143,30 +143,28 @@ export const profileData: ProfileData = {
   ],
   projects: [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce application built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, and payment integration.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "JWT"],
-      githubUrl: "https://github.com/ayush/ecommerce-platform",
-      demoUrl: "https://ecommerce-demo.example.com"
+      title: "Opentext - Data Protector",
+      description: "Developed and enhanced modules for OpenText Data Protector, including secure REST APIs, OIDC authentication (Keycloak + Entra ID), and containerized microservices for backup orchestration. Improved frontend security and reusability through Angular UI component upgrades and shared libraries.",
+      technologies: ["Java", "Spring Boot", "Angular", "Docker", "Kubernetes", "Keycloak", "Entra ID"],
+      githubUrl: "" // Internal project, no public repo
     },
     {
-      title: "Task Management System",
-      description: "Collaborative task management tool with real-time updates using WebSocket. Built with Angular and Spring Boot microservices architecture.",
-      technologies: ["Angular", "Spring Boot", "WebSocket", "MongoDB", "Docker"],
-      githubUrl: "https://github.com/ayush/task-manager",
-      demoUrl: "https://taskmanager-demo.example.com"
+      title: "Swiss Re - Insurance Portal",
+      description: "Built and maintained a comprehensive insurance portal for Swiss Re, enabling policy management, claims processing, and reporting. Implemented scalable microservices, asynchronous processing with RabbitMQ, and micro-frontend architecture for modular feature delivery.",
+      technologies: ["Java", "Spring Boot", "Angular", "RabbitMQ", "Micro-frontend", "Azure DevOps", "Docker"],
+      githubUrl: "" // Internal project, no public repo
     },
     {
-      title: "Data Visualization Dashboard",
-      description: "Interactive dashboard for analyzing business metrics with charts and real-time data updates. Implemented using React with D3.js and connected to REST APIs.",
-      technologies: ["React", "D3.js", "TypeScript", "Chart.js", "REST API"],
-      githubUrl: "https://github.com/ayush/data-dashboard"
+      title: "Satellite Imagery Time-Series Analysis",
+      description: "Analyzed temporal satellite datasets in Google Earth Engine to monitor vegetation anomalies across Uttarakhand. Created a Django-based time-series dashboard with GDAL for faster spatial anomaly detection.",
+      technologies: ["Google Earth Engine", "Python", "Django", "GDAL"],
+      githubUrl: "https://drive.google.com/file/d/17RwO0DAXGliUX_LBcu_RnB2KOrtyO8Hq/view?usp=sharing"
     },
     {
-      title: "Microservices Architecture",
-      description: "Scalable microservices system with API Gateway, service discovery, and distributed logging. Deployed on Kubernetes with CI/CD pipeline automation.",
-      technologies: ["Java", "Spring Cloud", "Kubernetes", "Jenkins", "ELK Stack"],
-      githubUrl: "https://github.com/ayush/microservices-demo"
+      title: "The Smart Glove",
+      description: "A wearable prototype that translates sign language gestures into speech in real time using sensors and a mobile app.",
+      technologies: ["Arduino", "Sensors", "Android"],
+      githubUrl: "https://github.com/AyushDhanai1419/The-Smart-Glove"
     }
   ],
 };

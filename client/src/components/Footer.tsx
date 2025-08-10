@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const handleDownloadResume = () => {
-    console.log("Download resume clicked");
+    const resumeUrl =
+      "https://drive.google.com/file/d/1REkDJ58cikdK08lwv4TAkpShF7BRgj4t/view?usp=sharing";
+    window.open(resumeUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleEmailMe = () => {
-    window.location.href = "mailto:ayush@example.com";
+    window.location.href = "mailto:ayushdhanai1419@gmail.com";
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -28,15 +30,19 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="footer-title">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            data-testid="footer-title"
+          >
             <span className="bg-gradient-to-r from-primary-400 to-violet-400 bg-clip-text text-transparent">
               Let's Build Something Amazing
             </span>
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-8">
-            Ready to bring your ideas to life? Let's collaborate on your next project.
+            Ready to bring your ideas to life? Let's collaborate on your next
+            project.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
               onClick={handleDownloadResume}
@@ -57,7 +63,7 @@ const Footer = () => {
             </Button>
           </div>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Contact Info */}
           <motion.div
@@ -67,14 +73,25 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold text-slate-100 mb-4" data-testid="contact-title">Contact</h3>
+            <h3
+              className="text-xl font-bold text-slate-100 mb-4"
+              data-testid="contact-title"
+            >
+              Contact
+            </h3>
             <div className="space-y-2">
-              <p className="text-slate-300" data-testid="contact-email">ayush@example.com</p>
-              <p className="text-slate-300" data-testid="contact-phone">+1 (555) 123-4567</p>
-              <p className="text-slate-300" data-testid="contact-availability">Available for remote work</p>
+              <p className="text-slate-300" data-testid="contact-email">
+                ayushdhanai1419@gmail.com
+              </p>
+              <p className="text-slate-300" data-testid="contact-phone">
+                +91 (963) 948-4006
+              </p>
+              <p className="text-slate-300" data-testid="contact-availability">
+                Available for remote work
+              </p>
             </div>
           </motion.div>
-          
+
           {/* Social Links */}
           <motion.div
             className="text-center"
@@ -83,32 +100,30 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold text-slate-100 mb-4" data-testid="connect-title">Connect</h3>
+            <h3
+              className="text-xl font-bold text-slate-100 mb-4"
+              data-testid="connect-title"
+            >
+              Connect
+            </h3>
             <div className="flex justify-center space-x-4">
-              <a 
-                href="#" 
+              <a
+                href="https://www.linkedin.com/in/ayushdhanai/"
                 className="w-12 h-12 bg-slate-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
                 data-testid="social-linkedin"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="https://github.com/AyushDhanai1419"
                 className="w-12 h-12 bg-slate-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
                 data-testid="social-github"
               >
                 <Github className="w-6 h-6" />
               </a>
-              <a 
-                href="#" 
-                className="w-12 h-12 bg-slate-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
-                data-testid="social-twitter"
-              >
-                <Twitter className="w-6 h-6" />
-              </a>
             </div>
           </motion.div>
-          
+
           {/* Quick Links */}
           <motion.div
             className="text-center md:text-right"
@@ -117,11 +132,16 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold text-slate-100 mb-4" data-testid="quicklinks-title">Quick Links</h3>
+            <h3
+              className="text-xl font-bold text-slate-100 mb-4"
+              data-testid="quicklinks-title"
+            >
+              Quick Links
+            </h3>
             <div className="space-y-2">
               <div>
-                <button 
-                  onClick={() => scrollToSection('home')} 
+                <button
+                  onClick={() => scrollToSection("home")}
                   className="text-slate-300 hover:text-primary-400 transition-colors duration-300"
                   data-testid="quicklink-home"
                 >
@@ -129,8 +149,8 @@ const Footer = () => {
                 </button>
               </div>
               <div>
-                <button 
-                  onClick={() => scrollToSection('experience')} 
+                <button
+                  onClick={() => scrollToSection("experience")}
                   className="text-slate-300 hover:text-primary-400 transition-colors duration-300"
                   data-testid="quicklink-experience"
                 >
@@ -138,8 +158,8 @@ const Footer = () => {
                 </button>
               </div>
               <div>
-                <button 
-                  onClick={() => scrollToSection('skills')} 
+                <button
+                  onClick={() => scrollToSection("skills")}
                   className="text-slate-300 hover:text-primary-400 transition-colors duration-300"
                   data-testid="quicklink-skills"
                 >
@@ -147,8 +167,8 @@ const Footer = () => {
                 </button>
               </div>
               <div>
-                <button 
-                  onClick={() => scrollToSection('awards')} 
+                <button
+                  onClick={() => scrollToSection("awards")}
                   className="text-slate-300 hover:text-primary-400 transition-colors duration-300"
                   data-testid="quicklink-awards"
                 >
@@ -156,8 +176,8 @@ const Footer = () => {
                 </button>
               </div>
               <div>
-                <button 
-                  onClick={() => scrollToSection('projects')} 
+                <button
+                  onClick={() => scrollToSection("projects")}
                   className="text-slate-300 hover:text-primary-400 transition-colors duration-300"
                   data-testid="quicklink-projects"
                 >
@@ -167,7 +187,7 @@ const Footer = () => {
             </div>
           </motion.div>
         </div>
-        
+
         <motion.div
           className="border-t border-slate-700/50 pt-8 text-center"
           initial={{ opacity: 0 }}
@@ -176,9 +196,12 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p className="text-slate-400" data-testid="footer-copyright">
-            © 2024 Ayush. Built with React, Tailwind CSS, and Framer Motion.
+            © 2025 Ayush Dhanai
           </p>
-          <p className="text-slate-500 mt-2 text-sm" data-testid="footer-tagline">
+          <p
+            className="text-slate-500 mt-2 text-sm"
+            data-testid="footer-tagline"
+          >
             Designed and developed with ❤️ for the modern web
           </p>
         </motion.div>
