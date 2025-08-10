@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Download, Mail, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useState } from "react";
+
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +28,7 @@ const Hero = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy email:', err);
+      console.error("Failed to copy email:", err);
     }
   };
 
@@ -53,7 +60,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
+            src="/dp.jpg"
             alt="Ayush - Professional headshot"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-primary-500/30 shadow-2xl"
             data-testid="profile-image"
@@ -80,8 +87,8 @@ const Hero = () => {
           data-testid="hero-description"
         >
           Full Stack Developer crafting exceptional digital experiences with{" "}
-          <span className="text-primary-400 font-semibold">React</span>,{" "}
-          <span className="text-violet-400 font-semibold">Node.js</span>, and
+          <span className="text-primary-400 font-semibold">Java</span>,{" "}
+          <span className="text-violet-400 font-semibold">Angular</span>, and
           modern web technologies
         </motion.p>
 
@@ -119,15 +126,18 @@ const Hero = () => {
               <div className="space-y-4">
                 <div className="bg-slate-700/50 p-4 rounded-lg border border-slate-600">
                   <p className="text-slate-300 text-sm mb-2">Email Address:</p>
-                  <p className="text-white font-mono text-lg break-all" data-testid="email-address">
+                  <p
+                    className="text-white font-mono text-lg break-all"
+                    data-testid="email-address"
+                  >
                     {email}
                   </p>
                 </div>
                 <Button
                   onClick={handleCopyEmail}
                   className={`w-full ${
-                    copied 
-                      ? "bg-green-600 hover:bg-green-700" 
+                    copied
+                      ? "bg-green-600 hover:bg-green-700"
                       : "bg-primary-500 hover:bg-primary-600"
                   } text-white transition-all duration-300`}
                   data-testid="button-copy-email"
