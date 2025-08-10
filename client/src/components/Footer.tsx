@@ -1,16 +1,28 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Download, Mail, Linkedin, Github, Twitter, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const email = "ayushdhanai1419@gmail.com";
+
   const handleDownloadResume = () => {
     const resumeUrl =
       "https://drive.google.com/file/d/1REkDJ58cikdK08lwv4TAkpShF7BRgj4t/view?usp=sharing";
     window.open(resumeUrl, "_blank", "noopener,noreferrer");
   };
 
-  const handleEmailMe = () => {
-    window.location.href = "mailto:ayushdhanai1419@gmail.com";
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -52,15 +64,54 @@ const Footer = () => {
               <Download className="w-5 h-5 mr-2" />
               Download Resume
             </Button>
-            <Button
-              onClick={handleEmailMe}
-              variant="outline"
-              className="border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
-              data-testid="footer-email-me"
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Email Me
-            </Button>
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                  data-testid="footer-email-me"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email Me
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="bg-slate-800 border-slate-700 max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-white text-xl font-semibold">
+                    Get In Touch
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div className="bg-slate-700/50 p-4 rounded-lg border border-slate-600">
+                    <p className="text-slate-300 text-sm mb-2">Email Address:</p>
+                    <p className="text-white font-mono text-lg break-all" data-testid="footer-email-address">
+                      {email}
+                    </p>
+                  </div>
+                  <Button
+                    onClick={handleCopyEmail}
+                    className={`w-full ${
+                      copied 
+                        ? "bg-green-600 hover:bg-green-700" 
+                        : "bg-primary-500 hover:bg-primary-600"
+                    } text-white transition-all duration-300`}
+                    data-testid="footer-copy-email"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="w-4 h-4 mr-2" />
+                        Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4 mr-2" />
+                        Copy Email
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </motion.div>
 
