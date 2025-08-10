@@ -11,7 +11,7 @@ const Navigation = () => {
     { id: "experience", label: "Experience" },
     { id: "skills", label: "Skills" },
     { id: "awards", label: "Awards" },
-    { id: "certificates", label: "Certificates" },
+    { id: "projects", label: "Projects" },
   ];
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Awards from "@/components/Awards";
-import Certificates from "@/components/Certificates";
+import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
       <Experience />
       <Skills />
       <Awards />
-      <Certificates />
+      <Projects />
       <Footer />
     </div>
   );

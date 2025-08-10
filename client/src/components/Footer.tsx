@@ -155,6 +155,15 @@ const Footer = () => {
                   Awards
                 </button>
               </div>
+              <div>
+                <button 
+                  onClick={() => scrollToSection('projects')} 
+                  className="text-slate-300 hover:text-primary-400 transition-colors duration-300"
+                  data-testid="quicklink-projects"
+                >
+                  Projects
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>

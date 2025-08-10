@@ -23,18 +23,19 @@ export interface Award {
   description: string;
 }
 
-export interface Certificate {
+export interface Project {
   title: string;
-  issuer: string;
-  image: string;
-  alt: string;
+  description: string;
+  technologies: string[];
+  githubUrl?: string;
+  demoUrl?: string;
 }
 
 export interface ProfileData {
   experience: Experience[];
   skills: Skills;
   awards: Award[];
-  certificates: Certificate[];
+  projects: Project[];
 }
 
 export const profileData: ProfileData = {
@@ -140,24 +141,32 @@ export const profileData: ProfileData = {
       description: "Reached the finals of a state-level hackathon competition.",
     },
   ],
-  certificates: [
+  projects: [
     {
-      title: "Certificate 1",
-      issuer: "Issuer Name",
-      image: "/certificates/cert-1.svg",
-      alt: "Certificate 1 — Ayush Dhanai",
+      title: "E-Commerce Platform",
+      description: "Full-stack e-commerce application built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, and payment integration.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "JWT"],
+      githubUrl: "https://github.com/ayush/ecommerce-platform",
+      demoUrl: "https://ecommerce-demo.example.com"
     },
     {
-      title: "Certificate 2",
-      issuer: "Issuer Name",
-      image: "/certificates/cert-2.svg",
-      alt: "Certificate 2 — Ayush Dhanai",
+      title: "Task Management System",
+      description: "Collaborative task management tool with real-time updates using WebSocket. Built with Angular and Spring Boot microservices architecture.",
+      technologies: ["Angular", "Spring Boot", "WebSocket", "MongoDB", "Docker"],
+      githubUrl: "https://github.com/ayush/task-manager",
+      demoUrl: "https://taskmanager-demo.example.com"
     },
     {
-      title: "Certificate 3",
-      issuer: "Issuer Name",
-      image: "/certificates/cert-3.svg",
-      alt: "Certificate 3 — Ayush Dhanai",
+      title: "Data Visualization Dashboard",
+      description: "Interactive dashboard for analyzing business metrics with charts and real-time data updates. Implemented using React with D3.js and connected to REST APIs.",
+      technologies: ["React", "D3.js", "TypeScript", "Chart.js", "REST API"],
+      githubUrl: "https://github.com/ayush/data-dashboard"
     },
+    {
+      title: "Microservices Architecture",
+      description: "Scalable microservices system with API Gateway, service discovery, and distributed logging. Deployed on Kubernetes with CI/CD pipeline automation.",
+      technologies: ["Java", "Spring Cloud", "Kubernetes", "Jenkins", "ELK Stack"],
+      githubUrl: "https://github.com/ayush/microservices-demo"
+    }
   ],
 };
