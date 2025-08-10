@@ -2,8 +2,8 @@
 
 A modern, responsive portfolio website showcasing professional experience, skills, awards, and featured projects. Built with React, TypeScript, and modern web technologies for optimal performance and user experience.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://your-portfolio-url.replit.app)
-[![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+![image](image.png)
+
 
 ## ✨ Features
 
@@ -203,26 +203,85 @@ The portfolio is fully responsive across all device sizes:
 
 ## 🚀 Deployment
 
-### Replit Deployment (Recommended)
-1. Push your code to a GitHub repository
-2. Import the project into Replit
-3. Configure environment variables in Replit Secrets
-4. Use Replit's built-in deployment with the "Deploy" button
-5. Your site will be available at `https://your-repl-name.replit.app`
+This portfolio is configured for multiple deployment platforms with automated CI/CD through GitHub Actions.
 
-### Manual Deployment
+### Quick Start Deployment
 
-#### Build for Production
+1. **Set up GitHub repository**:
+   ```bash
+   # Run the setup script
+   chmod +x scripts/setup-github.sh
+   ./scripts/setup-github.sh
+   
+   # Or manually:
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/yourusername/portfolio.git
+   git push -u origin main
+   ```
+
+2. **Choose your platform** (recommended order):
+
+   **🚂 Railway** (Best for full-stack apps):
+   - Visit [railway.app](https://railway.app)
+   - Connect GitHub and deploy your repository
+   - Add environment variables in dashboard
+   - Automatic database provisioning available
+
+   **⚡ Vercel** (Great for frontend-heavy apps):
+   - Visit [vercel.com](https://vercel.com) 
+   - Import GitHub repository
+   - Configure environment variables
+   - Automatic deployments on push
+
+   **🌐 Netlify** (Alternative static hosting):
+   - Visit [netlify.com](https://netlify.com)
+   - Connect GitHub repository
+   - Configure build settings
+
+### GitHub Actions CI/CD
+
+Automatic deployment is configured for:
+- **Testing**: Runs on all pull requests
+- **Deployment**: Triggers on main branch pushes
+- **Multi-platform**: Supports Railway, Vercel, and Netlify
+
+**Setup GitHub Secrets**:
+Go to Repository Settings → Secrets and variables → Actions, add:
+- `RAILWAY_TOKEN` (for Railway deployment)
+- `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` (for Vercel)
+- `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID` (for Netlify)
+
+### Environment Variables
+
+Required for all platforms:
 ```bash
-npm run build
+NODE_ENV=production
+DATABASE_URL=postgresql://user:pass@host:5432/db
+SESSION_SECRET=your-super-secret-key
+PORT=5000
 ```
 
-#### Deploy to Any Platform
-The built files will be in the `dist/` directory:
+### Build Commands
+
+```bash
+# Development
+npm run dev
+
+# Production build
+npm run build
+
+# Start production server
+npm start
+```
+
+Built files structure:
 - `dist/public/` - Frontend static files
 - `dist/index.js` - Backend server
 
-Supported platforms: Vercel, Netlify, Railway, Heroku, AWS, Google Cloud
+📖 **For detailed deployment instructions**, see [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## 🤝 Contributing
 
