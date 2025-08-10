@@ -20,8 +20,9 @@ const Navigation = () => {
       let current = "";
       
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        const htmlElement = section as HTMLElement;
+        const sectionTop = htmlElement.offsetTop - 100;
+        const sectionHeight = htmlElement.offsetHeight;
         if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
           current = section.getAttribute("id") || "";
         }

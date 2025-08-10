@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
-import { profileData } from "@/data/profile";
+import { profileData, type Certificate } from "@/data/profile";
 
 const Certificates = () => {
   const [lightboxImage, setLightboxImage] = useState<{
@@ -62,7 +62,7 @@ const Certificates = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {profileData.certificates.map((cert, index) => (
+          {profileData.certificates.map((cert: Certificate, index: number) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -84,12 +84,10 @@ const Certificates = () => {
                   index % 3 === 0 ? "text-primary-400" :
                   index % 3 === 1 ? "text-violet-400" :
                   "text-emerald-400"
-                }`} data-testid={`certificate-level-${index}`}>
-                  {cert.level}
-                </p>
-                <p className="text-slate-300 text-sm" data-testid={`certificate-issuer-${index}`}>
+                }`} data-testid={`certificate-issuer-${index}`}>
                   {cert.issuer}
                 </p>
+
                 <div className="mt-4">
                   <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                     index % 3 === 0 ? "bg-primary-500/20 text-primary-300" :

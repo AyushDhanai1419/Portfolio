@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { profileData } from "@/data/profile";
+import { profileData, type Experience } from "@/data/profile";
 
 const Experience = () => {
   const containerVariants = {
@@ -45,7 +45,7 @@ const Experience = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {profileData.experience.map((exp, index) => (
+          {profileData.experience.map((exp: Experience, index: number) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -66,7 +66,7 @@ const Experience = () => {
                     {exp.company}
                   </h4>
                   <ul className="text-slate-300 space-y-2 leading-relaxed">
-                    {exp.achievements.map((achievement, achIndex) => (
+                    {exp.achievements.map((achievement: string, achIndex: number) => (
                       <li key={achIndex} className="flex items-start" data-testid={`experience-achievement-${index}-${achIndex}`}>
                         <span className="text-primary-400 mr-3 mt-1.5">•</span>
                         {achievement}
@@ -74,7 +74,7 @@ const Experience = () => {
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-2 mt-6">
-                    {exp.technologies.map((tech, techIndex) => (
+                    {exp.technologies.map((tech: string, techIndex: number) => (
                       <Badge
                         key={techIndex}
                         className={`px-3 py-1 rounded-full text-sm font-medium ${

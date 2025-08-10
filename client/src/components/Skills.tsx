@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Monitor, Server, Database } from "lucide-react";
-import { profileData } from "@/data/profile";
+import { profileData, type Skill } from "@/data/profile";
 
 const Skills = () => {
   const skillCategories = [
@@ -18,9 +18,9 @@ const Skills = () => {
     },
     {
       icon: Database,
-      title: "Database & Cloud",
+      title: "Tools & Cloud",
       color: "from-emerald-500 to-emerald-600",
-      skills: profileData.skills.database
+      skills: profileData.skills.tools
     }
   ];
 
@@ -82,7 +82,7 @@ const Skills = () => {
                 </h3>
               </div>
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill: Skill, skillIndex: number) => (
                   <div key={skillIndex} className="flex justify-between items-center" data-testid={`skill-item-${index}-${skillIndex}`}>
                     <span className="text-slate-300 font-medium" data-testid={`skill-name-${index}-${skillIndex}`}>
                       {skill.name}

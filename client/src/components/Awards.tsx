@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Star, TrendingUp, Award, Code } from "lucide-react";
-import { profileData } from "@/data/profile";
+import { Star, TrendingUp, Award as AwardIcon, Code } from "lucide-react";
+import { profileData, type Award } from "@/data/profile";
 
 const Awards = () => {
-  const icons = [Star, TrendingUp, Award, Code];
+  const icons = [Star, TrendingUp, AwardIcon, Code];
   const colors = [
     "from-yellow-400 to-yellow-600",
     "from-primary-500 to-primary-600", 
@@ -53,7 +53,7 @@ const Awards = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {profileData.awards.map((award, index) => {
+          {profileData.awards.map((award: Award, index: number) => {
             const IconComponent = icons[index % icons.length];
             const colorClass = colors[index % colors.length];
             
