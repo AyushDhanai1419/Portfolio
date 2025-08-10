@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
-
+import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +37,12 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
     >
+      {/* Animated Particle Background */}
+      <AnimatedBackground />
+      
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-violet-900/20"></div>
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-violet-900/20 z-0"></div>
+      <div className="absolute inset-0 z-0">
         <motion.div
           className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"
           animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
@@ -60,7 +63,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/dp.jpg"
+            src="/dp.JPG"
             alt="Ayush - Professional headshot"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-primary-500/30 shadow-2xl"
             data-testid="profile-image"

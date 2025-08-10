@@ -34,7 +34,7 @@ const Experience = () => {
             </span>
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Building innovative solutions and leading development teams across various industries
+            Crafting scalable, high-quality applications from frontend to backend with a focus on performance, security and maintainability
           </p>
         </motion.div>
         

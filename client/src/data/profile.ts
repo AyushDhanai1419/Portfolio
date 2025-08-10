@@ -63,7 +63,7 @@ export const profileData: ProfileData = {
       ],
     },
     {
-      role: "Power Programmer (Full Stack Developer)",
+      role: "Software Engineer I - Full Stack Developer",
       company: "Infosys Ltd.",
       period: "Sep 2020 – Dec 2023",
       achievements: [

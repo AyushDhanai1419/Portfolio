@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack portfolio website built with React and Express.js, showcasing a developer's professional experience, skills, awards, and certifications. The application features a modern, responsive design with smooth animations and interactive components. It serves as both a personal portfolio and a demonstration of modern web development practices using TypeScript, Tailwind CSS, and component-based architecture.
+This is a full-stack portfolio website built with React and Express.js, showcasing a developer's professional experience, skills, awards, and projects. The application features a modern, responsive design with smooth animations, interactive components, and an animated particle background system. It serves as both a personal portfolio and a demonstration of modern web development practices using TypeScript, Tailwind CSS, and component-based architecture.
 
 # User Preferences
 
@@ -15,8 +15,9 @@ The frontend is built with React 18 using TypeScript and follows a component-bas
 - **Component Organization**: Components are organized in a flat structure under `/client/src/components/` with UI primitives in `/components/ui/`
 - **Styling Strategy**: Tailwind CSS with CSS custom properties for theming and design tokens
 - **State Management**: Uses React hooks and context for local state management, with TanStack Query for server state
-- **Animation**: Framer Motion for smooth transitions and micro-interactions
+- **Animation**: Framer Motion for smooth transitions and micro-interactions, Canvas-based particle system for interactive background effects
 - **Type Safety**: Full TypeScript implementation with strict type checking
+- **Interactive Background**: Custom Canvas-based particle animation system with mouse interaction and accessibility support
 
 ## Backend Architecture
 The backend follows a minimal Express.js architecture with TypeScript. The server is designed as a simple API layer that can be extended with additional routes and middleware as needed.
